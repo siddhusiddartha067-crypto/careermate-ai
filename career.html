@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Career Planner - CareerMate AI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🎯 Career Planner</h1>
+        <p>Plan your career with CareerMate AI</p>
+    </header>
+
+    <main>
+
+        <section class="hero">
+
+            <h2>Tell Us About Your Career Goal</h2>
+
+            <input
+                type="text"
+                id="careerGoal"
+                placeholder="Example: Software Engineer"
+            >
+
+            <br><br>
+
+            <input
+                type="number"
+                id="studyHours"
+                placeholder="Study hours per day"
+            >
+
+            <br><br>
+
+            <button onclick="createPlan()">
+                Create My Career Plan 🚀
+            </button>
+
+            <div id="careerResult"></div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>CareerMate AI</p>
+    </footer>
+
+    <script>
+        function createPlan() {
+
+            let goal = document.getElementById("careerGoal").value;
+            let hours = document.getElementById("studyHours").value;
+
+            if (goal === "" || hours === "") {
+                alert("Please enter your career goal and study hours.");
+                return;
+            }
+
+            document.getElementById("careerResult").innerHTML =
+                "<h2>Your Career Plan</h2>" +
+                "<p>🎯 Goal: " + goal + "</p>" +
+                "<p>⏰ Study Time: " + hours + " hours/day</p>" +
+                "<p>📚 Step 1: Learn programming fundamentals</p>" +
+                "<p>🧠 Step 2: Learn Data Structures & Algorithms</p>" +
+                "<p>💻 Step 3: Build real projects</p>" +
+                "<p>📄 Step 4: Prepare your resume</p>" +
+                "<p>💼 Step 5: Apply for internships</p>";
+        }
+    </script>
+
+</body>
+
+</html>
