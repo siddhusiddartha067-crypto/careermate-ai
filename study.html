@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Study Planner - CareerMate AI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>📚 Study Planner</h1>
+        <p>Create your personalized study plan</p>
+    </header>
+
+    <main>
+
+        <section class="hero">
+
+            <h2>Build Your Study Plan</h2>
+
+            <input
+                type="text"
+                id="subject"
+                placeholder="Enter subject"
+            >
+
+            <br><br>
+
+            <input
+                type="number"
+                id="hours"
+                placeholder="Hours per day"
+            >
+
+            <br><br>
+
+            <button onclick="createStudyPlan()">
+                Create Study Plan 📅
+            </button>
+
+            <div id="studyResult"></div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>CareerMate AI</p>
+    </footer>
+
+    <script>
+        function createStudyPlan() {
+
+            let subject = document.getElementById("subject").value;
+            let hours = document.getElementById("hours").value;
+
+            if (subject === "" || hours === "") {
+                alert("Please enter subject and study hours.");
+                return;
+            }
+
+            document.getElementById("studyResult").innerHTML =
+                "<h2>Your Study Plan</h2>" +
+                "<p>📚 Subject: " + subject + "</p>" +
+                "<p>⏰ Daily Time: " + hours + " hours</p>" +
+                "<p>🌅 Morning: Learn concepts</p>" +
+                "<p>🌆 Evening: Practice problems</p>" +
+                "<p>🌙 Night: Revise what you learned</p>" +
+                "<p>✅ Weekly: Take a test and check your progress</p>";
+        }
+    </script>
+
+</body>
+
+</html>
