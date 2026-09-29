@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Resume Analyzer - CareerMate AI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>📄 Resume Analyzer</h1>
+        <p>Check and improve your resume</p>
+    </header>
+
+    <main>
+
+        <section class="hero">
+
+            <h2>Paste Your Resume</h2>
+
+            <textarea
+                id="resumeText"
+                rows="12"
+                cols="40"
+                placeholder="Paste your resume text here..."
+            ></textarea>
+
+            <br><br>
+
+            <button onclick="analyzeResume()">
+                Analyze Resume 🔍
+            </button>
+
+            <div id="resumeResult"></div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>CareerMate AI</p>
+    </footer>
+
+    <script>
+        function analyzeResume() {
+
+            let resume = document.getElementById("resumeText").value;
+
+            if (resume.trim() === "") {
+                alert("Please paste your resume first.");
+                return;
+            }
+
+            let suggestions = [];
+
+            if (!resume.toLowerCase().includes("skills")) {
+                suggestions.push("Add a Skills section.");
+            }
+
+            if (!resume.toLowerCase().includes("project")) {
+                suggestions.push("Add your projects.");
+            }
+
+            if (!resume.toLowerCase().includes("education")) {
+                suggestions.push("Add your Education section.");
+            }
+
+            if (!resume.toLowerCase().includes("github")) {
+                suggestions.push("Add your GitHub profile.");
+            }
+
+            document.getElementById("resumeResult").innerHTML =
+                "<h2>Resume Feedback</h2>" +
+                (suggestions.length > 0
+                    ? "<p>💡 Suggestions:</p><ul><li>" +
+                      suggestions.join("</li><li>") +
+                      "</li></ul>"
+                    : "<p>✅ Your resume contains the basic sections!</p>");
+        }
+    </script>
+
+</body>
+
+</html>
