@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Interview - CareerMate AI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🎤 AI Interview</h1>
+        <p>Practice your interview skills</p>
+    </header>
+
+    <main>
+
+        <section class="hero">
+
+            <h2>Start Your Interview</h2>
+
+            <input
+                type="text"
+                id="role"
+                placeholder="Example: Software Developer"
+            >
+
+            <br><br>
+
+            <button onclick="startInterview()">
+                Start Interview 🚀
+            </button>
+
+            <div id="interviewResult"></div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>CareerMate AI</p>
+    </footer>
+
+    <script>
+        function startInterview() {
+
+            let role = document.getElementById("role").value;
+
+            if (role === "") {
+                alert("Please enter your job role.");
+                return;
+            }
+
+            document.getElementById("interviewResult").innerHTML =
+                "<h2>Interview Question</h2>" +
+                "<p>🎯 Role: " + role + "</p>" +
+                "<p>❓ Tell me about yourself and your technical skills.</p>" +
+                "<p>💡 Tip: Give a clear and confident answer.</p>";
+        }
+    </script>
+
+</body>
+
+</html>
